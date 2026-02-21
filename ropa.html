@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Belated Valentine's Day Ropa ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #c44569 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .message {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            animation: fadeIn 2s ease-in;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .message h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .photo-container {
+            margin: 20px auto;
+            width: 280px;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .valentine-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+            color: #fff0f0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
+            line-height: 1.4;
+        }
+
+        .personal {
+            font-size: 2rem;
+            margin: 1rem 0;
+            font-weight: bold;
+            color: #ffeaa7;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .message p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px #ff6b6b; }
+            to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px #ff6b6b, 0 0 30px #ff6b6b; }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .heart {
+            position: fixed;
+            color: #ff0000;
+            font-size: 20px;
+            animation: floatUp linear infinite;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) rotate(45deg) scale(1);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .burst-heart {
+            position: fixed;
+            font-size: 30px;
+            animation: burst 1s ease-out forwards;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        .click-hint {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @media (max-width: 600px) {
+            .message h1 { font-size: 1.8rem; }
+            .valentine-message { font-size: 1.2rem; }
+            .personal { font-size: 1.6rem; }
+            .photo-container { width: 240px; height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heartsContainer"></div>
+
+    <div class="message">
+        <h1>❤️ Happy Belated Valentine's Day ❤️</h1>
+        
+        <div class="photo-container">
+            <img src="https://i.imgur.com/F56BBqh.jpeg" alt="Us Together" id="couplePhoto">
+        </div>
+        
+        <div class="valentine-message">Happy belated valentine's day Ropa<br>and this is my gift for you</div>
+        <div class="personal">love you ropa so very much still</div>
+        <p>Sending you lots of love and warm hearts!</p>
+    </div>
+
+    <div class="click-hint">Click anywhere for more hearts! 💕</div>
+
+    <script>
+        const container = document.getElementById('heartsContainer');
+        const heartSymbols = ['❤️', '💖', '💗', '💓', '💕', '💝', '♥️', '💘', '💟', '❣️', '💌', '💋'];
+        const roseSymbols = ['🌹', '🥀', '🌺', '🌸', '🏵️', '💐'];
+
+        function createHeart(x, y, isBurst = false, isRose = false) {
+            const heart = document.createElement('div');
+            const symbols = isRose ? roseSymbols : heartSymbols;
+            heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            heart.className = isBurst ? 'burst-heart' : 'heart';
+            
+            if (!isBurst) {
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                heart.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+            } else {
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+            }
+            
+            container.appendChild(heart);
+            
+            if (!isBurst) {
+                setTimeout(() => heart.remove(), 7000);
+            } else {
+                setTimeout(() => heart.remove(), 1000);
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            setTimeout(() => {
+                const isRose = Math.random() > 0.7;
+                createHeart(null, null, false, isRose);
+            }, Math.random() * 3000);
+        }
+
+        setInterval(() => {
+            const isRose = Math.random() > 0.8;
+            createHeart(null, null, false, isRose);
+        }, 200);
+
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const isRose = Math.random() > 0.6;
+                    createHeart(
+                        e.clientX + (Math.random() - 0.5) * 150, 
+                        e.clientY + (Math.random() - 0.5) * 150, 
+                        true,
+                        isRose
+                    );
+                }, i * 40);
+            }
+        });
+
+        let lastMove = 0;
+        document.addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            if (now - lastMove > 80) {
+                if (Math.random() > 0.6) {
+                    const isRose = Math.random() > 0.8;
+                    createHeart(e.clientX, e.clientY, true, isRose);
+                }
+                lastMove = now;
+            }
+        });
+    </script>
+
+</body>
+</html>
